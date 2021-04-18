@@ -1,0 +1,24 @@
+# permissions for end users to edit certchecks.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: certcheck-editor-role
+rules:
+- apiGroups:
+  - sre.amsy810.dev
+  resources:
+  - certchecks
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - sre.amsy810.dev
+  resources:
+  - certchecks/status
+  verbs:
+  - get

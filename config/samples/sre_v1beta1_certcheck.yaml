@@ -1,0 +1,7 @@
+apiVersion: sre.amsy810.dev/v1beta1
+kind: CertCheck
+metadata:
+  name: certcheck-sample
+spec:
+  # Add fields here
+  foo: bar

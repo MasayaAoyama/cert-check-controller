@@ -1,3 +1,7 @@
 domain: amsy810.dev
 repo: github.com/MasayaAoyama/cert-check-controller
+resources:
+- group: sre
+  kind: CertCheck
+  version: v1beta1
 version: "2"
