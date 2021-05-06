@@ -3,5 +3,7 @@ kind: CertCheck
 metadata:
   name: certcheck-sample
 spec:
-  # Add fields here
-  foo: bar
+  threshold: 5000
+  selector:
+    matchLabels:
+      certcheck-group: sample

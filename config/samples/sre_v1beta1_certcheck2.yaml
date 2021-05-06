@@ -1,0 +1,6 @@
+apiVersion: sre.amsy810.dev/v1beta1
+kind: CertCheck
+metadata:
+  name: certcheck-sample2
+spec: {}
+

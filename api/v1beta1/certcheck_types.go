@@ -28,17 +28,25 @@ type CertCheckSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of CertCheck. Edit CertCheck_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Selector  *metav1.LabelSelector `json:"selector,omitempty"`
+	Threshold int                   `json:"threshold,omitempty"`
 }
 
 // CertCheckStatus defines the observed state of CertCheck
 type CertCheckStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
+	TargetCertsCount int           `json:"targetCertsCount,omitempty"`
+	Certificates     []Certificate `json:"certificates,omitempty"`
+}
+
+type Certificate struct {
+	Name      string      `json:"name,omitempty"`
+	NotBefore metav1.Time `json:"notBefore,omitempty"`
+	NotAfter  metav1.Time `json:"notAfter,omitempty"`
+	Active    bool        `json:"active,omitempty"`
 }
 
 // +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 
 // CertCheck is the Schema for the certchecks API
 type CertCheck struct {
