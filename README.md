@@ -35,6 +35,16 @@ data:
   tls.key: ...
 ```
 
+# Getting started
+
+use kustomization.
+
+```
+git clone https://github.com/MasayaAoyama/cert-check-controller.git
+cd cert-check-controller
+kustomize build . | kubectl apply -f -
+```
+
 # Features
 
 ## annotate secret for cert info
