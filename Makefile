@@ -63,9 +63,9 @@ docker-push:
 	docker push ${IMG}
 
 release: docker-build docker-push
-	kustomize build config/crd > manifest.yaml
+	kustomize build config/crd > manifests.yaml
 	cd config/manager && kustomize edit set image controller=${IMG}
-	kustomize build config/default >> manifest.yaml
+	kustomize build config/default >> manifests.yaml
 
 # find or download controller-gen
 # download controller-gen if necessary

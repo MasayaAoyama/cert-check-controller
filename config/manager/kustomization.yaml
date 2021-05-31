@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: amsy810/cert-check-controller
-  newTag: v0.2.0
+  newTag: v0.2.1
