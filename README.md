@@ -47,7 +47,7 @@ kustomize build . | kubectl apply -f -
 
 # Features
 
-## annotate secret for cert info
+## annotate and label secret for cert info
 
 Record cert infomation for only tls type secret.
 
@@ -61,11 +61,11 @@ data:
 kind: Secret
 metadata:
   annotations:
-    certcheck.amsy.dev/active: "true"
     certcheck.amsy.dev/notAfter: 2030-03-30 04:42:09 +0000 UTC
     certcheck.amsy.dev/notBefore: 2020-04-01 04:42:09 +0000 UTC
   labels:
     certcheck-group: sample
+    certcheck.amsy.dev/active: "true"
   name: tls-sample
   namespace: default
 type: kubernetes.io/tls

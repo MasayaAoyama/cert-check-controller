@@ -138,7 +138,7 @@ func (r *CertCheckReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
 				Active:    isActive,
 			})
 
-			sec.Annotations["certcheck.amsy.dev/active"] = fmt.Sprintf("%t", isActive)
+			sec.Labels["certcheck.amsy.dev/active"] = fmt.Sprintf("%t", isActive)
 			sec.Annotations["certcheck.amsy.dev/notBefore"] = notBefore.String()
 			sec.Annotations["certcheck.amsy.dev/notAfter"] = notAfter.String()
 			r.Update(context.TODO(), &sec)
